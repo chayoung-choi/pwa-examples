@@ -1,6 +1,8 @@
+var _cachesName = 'test-pwa';
 self.addEventListener('install', function(e) {
+ console.log('[ServiceWorker] Install');
  e.waitUntil(
-   caches.open('test-pwa').then(function(cache) {
+   caches.open(_cachesName).then(function(cache) {
      return cache.addAll([
        '/test/',
        '/test/index.html',
