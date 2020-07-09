@@ -10,19 +10,14 @@
   let deferredPrompt;
   const addBtn = document.querySelector('#add-button');
   addBtn.style.display = 'none';
-  
+
   window.addEventListener('beforeinstallprompt', (e) => {
     console.log("beforeinstallprompt", e);
     // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
-
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      console.log('display-mode is standalone');
-    } else {
-      addBtn.style.display = 'block';
-    }
+    addBtn.style.display = 'block';
   });
 
   addBtn.addEventListener('click', (e) => {

@@ -18,7 +18,7 @@ self.addEventListener('activate', function(e) {
   e.waitUntil(
     caches.keys().then(function(keyList) {
       return Promise.all(keyList.map(function(key) {
-        if (key !== _appVersion) {
+        if (key !== _cachesName) {
           log('Removing old cache ' + key);
           return caches.delete(key);
         }
