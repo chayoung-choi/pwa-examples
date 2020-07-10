@@ -4,10 +4,10 @@ self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open(_cachesName).then(function(cache) {
      return cache.addAll([
-       '/test/',
-       '/test/index.html',
-       '/test/scripts/index.js',
-       '/test/icon.jpg'
+       '/pwa-examples/',
+       '/pwa-examples/index.html',
+       '/pwa-examples/scripts/index.js',
+       '/pwa-examples/icon.jpg'
      ]);
    })
  );
